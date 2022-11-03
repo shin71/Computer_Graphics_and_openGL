@@ -10,7 +10,7 @@ void myInit()
     glutInitWindowSize(windowWidth, windowHeight);
     glutInitWindowPosition(0, 0);
     glPointSize(2.0);
-    glutCreateWindow("Transformation");
+    glutCreateWindow("translation_on_3_objects");
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
