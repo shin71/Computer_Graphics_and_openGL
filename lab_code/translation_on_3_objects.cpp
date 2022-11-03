@@ -65,7 +65,7 @@ void Display()
 
 int main(int argc, char* argv[]){
     cout << "that white square is the origin" << endl;
-    cout << "press 0 for square,1 for triangle,2 for  " << endl;
+    cout << "press 0 for square,1 for triangle,2 for hexagon " << endl;
     int object; cin >> object;
     if (object == 0)
     {
