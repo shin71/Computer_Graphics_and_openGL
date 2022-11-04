@@ -1,7 +1,7 @@
 #include<GL/glut.h>
 #include<bits/stdc++.h>
 using namespace std;
-vector<vector<float>> points = { {0,150,-150},{150,-100,-100},{1,1,1} };
+vector<vector<float>> points = { {0,100,100,0},{0,0,100,100},{1,1,1,1} };
 float windowWidth = 700.0;
 float windowHeight = 700.0;
 void myInit()
@@ -90,10 +90,10 @@ void Display()
         int fac, axis;
         float sx = 0, sy = 0;
         cout << "enter sheering factor" << endl;
-        cin >> fac;
+        cin >> fac; sx = fac;
         cout << "enter axis for sheering 1 for x or 0 for y" << endl;
         cin >> axis;
-        if (!axis) { swap(sx, sy);}
+        if (!axis) { swap(sx, sy); }
         vector<vector<float>> sheer = { {1,sy,0},{sx,1,0},{0,0,1} };
         mul_matrix(sheer);
     }
@@ -103,12 +103,12 @@ void Display()
         cout << "enter slope and intercept of line" << endl;
         cin >> m >> c;
         vector<vector<float>> ref = {
-              {(1 - (m * m)) / (1 + (m * m)),(2 * m) / (1 + (m * m)),(2 * m* -c) / (1 + (m * m))},
-              {(2 * m) / (1 + (m * m)) ,((m*m)-1)/(1+(m*m)),(2 * c) / (1 + (m * m)) },
-              {0,0,1} 
+              {(1 - (m * m)) / (1 + (m * m)),(2 * m) / (1 + (m * m)),(2 * m * -c) / (1 + (m * m))},
+              {(2 * m) / (1 + (m * m)) ,((m * m) - 1) / (1 + (m * m)),(2 * c) / (1 + (m * m)) },
+              {0,0,1}
         };
         mul_matrix(ref);
-        
+
     }
     glClear(GL_COLOR_BUFFER_BIT);
 }
